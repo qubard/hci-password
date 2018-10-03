@@ -1,4 +1,9 @@
+var configuration = {
+    dump_url : 'localhost'
+}
+
 var scene = new THREE.Scene();
+
 scene.background = new THREE.Color(0xC48BA0);
 
 var aspect = window.innerWidth / window.innerHeight;
@@ -481,7 +486,7 @@ var submitOnce = true;
 function submitLog() {
 	if (submitOnce) {
 		$.ajax({
-			url: 'https://upload.blueberrypancak.es/private/password-demo/save.php',
+			url: configuration.dump_url,
 			data: {
 				log: logdata
 			},
